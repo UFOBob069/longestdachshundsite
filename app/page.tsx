@@ -1,448 +1,249 @@
 import Image from "next/image";
-
-const amazonSearch =
-  "https://www.amazon.com/s?k=Doxie+Dynasty+Card+Game";
+import { SiteFooter, SiteHeader } from "./_components/SiteChrome";
 
 const Paw = ({ className = "" }: { className?: string }) => (
   <span className={`paw ${className}`} aria-hidden="true">
-    ●
+    <i />
   </span>
 );
 
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Doxie Dynasty home">
-          <span className="brand-mark" aria-hidden="true">
-            <span>♛</span>
-          </span>
-          <span className="brand-copy">
-            <strong>DOXIE</strong>
-            <span>DYNASTY</span>
-          </span>
-        </a>
-
-        <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#card-game">Card game</a>
-          <a href="#app-game">App game</a>
-          <a href="#about">Our world</a>
-        </nav>
-
-        <a className="button button-small button-gold header-cta" href="#card-game">
-          Meet the games
-        </a>
-
-        <details className="mobile-nav">
-          <summary aria-label="Open navigation">
-            <span />
-            <span />
-            <span />
-          </summary>
-          <div>
-            <a href="#card-game">Card game</a>
-            <a href="#app-game">App game</a>
-            <a href="#about">Our world</a>
-          </div>
-        </details>
-      </header>
+      <SiteHeader />
 
       <section className="hero" id="top">
-        <div className="hero-noise" />
+        <div className="hero-grain" />
         <Paw className="paw-one" />
         <Paw className="paw-two" />
-        <div className="hero-content">
-          <p className="eyebrow">ONE DYNASTY · TWO WAYS TO PLAY</p>
+        <div className="hero-copy">
+          <p className="eyebrow">A DELIGHTFULLY LONG MOBILE ADVENTURE</p>
           <h1>
-            Big personality.
+            Stretch your
             <br />
-            <span>Tiny legs.</span>
+            <em>legend.</em>
           </h1>
           <p className="hero-lede">
-            A delightfully competitive card game and a wonderfully long mobile
-            adventure—made for people who know dachshunds are never short on
-            character.
+            Snack, steer, and bark your way through a sunny backyard. The
+            farther you go, the longer your dachshund grows.
           </p>
           <div className="hero-actions">
-            <a className="button button-gold" href="#card-game">
-              Explore the card game <span aria-hidden="true">→</span>
+            <a className="button button-gold" href="#gameplay">
+              See how it plays <span aria-hidden="true">↓</span>
             </a>
-            <a className="button button-ghost" href="#app-game">
-              Preview the app <span aria-hidden="true">↓</span>
+            <a className="button button-ghost" href="#screens">
+              Meet your doxie
             </a>
           </div>
-          <div className="hero-proof">
-            <span>♛</span>
-            <p>
-              <strong>Built for the whole pack</strong>
-              <br />
-              Tabletop fun, tail-wagging adventure.
-            </p>
+          <div className="coming-note">
+            <span />
+            Coming soon to iOS and Android
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="The Doxie Dynasty mascot">
-          <div className="portrait-halo" />
-          <div className="portrait-frame">
+        <div className="hero-phone-stage" aria-label="The Longest Dachshund gameplay preview">
+          <div className="hero-orbit orbit-a" />
+          <div className="hero-orbit orbit-b" />
+          <div className="hero-phone">
+            <div className="phone-speaker" />
             <Image
-              src="/images/royal-doxie.png"
-              alt="A joyful black and tan long-haired dachshund wearing a tiny crown"
+              src="/images/app-gameplay.png"
+              alt="A long dachshund running through a sunny backyard in The Longest Dachshund"
               fill
               priority
-              sizes="(max-width: 900px) 82vw, 42vw"
+              sizes="(max-width: 850px) 78vw, 31vw"
             />
           </div>
-          <div className="floating-tag tag-top">
-            <span>NEW</span>
-            Card game
-          </div>
-          <div className="floating-tag tag-bottom">
-            <span>SOON</span>
-            Mobile game
-          </div>
-          <div className="hero-seal">
-            <span>THE</span>
-            <strong>TOP</strong>
-            <span>DOG</span>
-          </div>
+          <span className="float-stat stat-snack"><b>+1</b> snack</span>
+          <span className="float-stat stat-long"><b>12</b> long</span>
+          <div className="sun-token">☀</div>
         </div>
       </section>
 
       <div className="ticker" aria-hidden="true">
         <div>
-          <span>♛</span> CARD GAME <Paw /> <span>♛</span> MOBILE ADVENTURE{" "}
-          <Paw /> <span>♛</span> BUILT FOR DOXIE PEOPLE <Paw />{" "}
-          <span>♛</span> CARD GAME <Paw /> <span>♛</span> MOBILE ADVENTURE{" "}
-          <Paw />
+          <span>SNACK</span><Paw /><span>STEER</span><Paw /><span>BARK</span><Paw />
+          <span>STRETCH</span><Paw /><span>SNACK</span><Paw /><span>STEER</span><Paw />
+          <span>BARK</span><Paw /><span>STRETCH</span><Paw />
         </div>
       </div>
 
-      <section className="card-game-section" id="card-game">
-        <div className="section-heading card-heading">
+      <section className="gameplay" id="gameplay">
+        <div className="section-intro">
           <div>
-            <p className="eyebrow">THE CARD GAME</p>
-            <h2>
-              Make sets.
-              <br />
-              Build your <em>dynasty.</em>
-            </h2>
+            <p className="eyebrow">THE LONGEST RUN WINS</p>
+            <h2>Go long.<br /><em>Live legendary.</em></h2>
           </div>
-          <div className="heading-copy">
-            <p>
-              Collect irresistible doxies, build winning combinations, and
-              chase the title every dog deserves: Top Dog.
-            </p>
-            <a
-              className="text-link"
-              href={amazonSearch}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Find it on Amazon <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-
-        <div className="card-showcase">
-          <div className="product-stage">
-            <div className="product-glow" />
-            <Image
-              className="product-cover"
-              src="/images/card-game-cover.png"
-              alt="Doxie Dynasty card game cover with three dachshunds"
-              width={1080}
-              height={1536}
-              sizes="(max-width: 800px) 72vw, 38vw"
-            />
-            <Image
-              className="sample-card"
-              src="/images/andre-card.png"
-              alt="Andre, a playful long-haired dachshund card"
-              width={1024}
-              height={1536}
-              sizes="(max-width: 800px) 34vw, 18vw"
-            />
-            <span className="prototype-note">Product artwork</span>
-          </div>
-
-          <div className="game-details">
-            <div className="launch-pill">
-              <span />
-              Amazon launch
-            </div>
-            <h3>Collect. Make sets. Win.</h3>
-            <p>
-              Easy to pick up and packed with personality, Doxie Dynasty turns
-              every game night into a spirited showdown.
-            </p>
-
-            <dl className="game-stats">
-              <div>
-                <dt>84</dt>
-                <dd>cards</dd>
-              </div>
-              <div>
-                <dt>2–6</dt>
-                <dd>players</dd>
-              </div>
-              <div>
-                <dt>20–30</dt>
-                <dd>minutes</dd>
-              </div>
-            </dl>
-
-            <ol className="steps">
-              <li>
-                <span>01</span>
-                <div>
-                  <strong>Collect your doxies</strong>
-                  <p>Meet a whole pack of one-of-a-kind personalities.</p>
-                </div>
-              </li>
-              <li>
-                <span>02</span>
-                <div>
-                  <strong>Make your sets</strong>
-                  <p>Build the combinations that grow your dynasty.</p>
-                </div>
-              </li>
-              <li>
-                <span>03</span>
-                <div>
-                  <strong>Be the Top Dog</strong>
-                  <p>Outplay the pack and claim the crown.</p>
-                </div>
-              </li>
-            </ol>
-
-            <a
-              className="button button-gold button-wide"
-              href={amazonSearch}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Search on Amazon <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-
-        <figure className="real-game">
-          <div className="real-game-image">
-            <Image
-              src="/images/card-game-prototype.png"
-              alt="The physical Doxie Dynasty game box with a spread of cards"
-              fill
-              sizes="(max-width: 900px) 92vw, 60vw"
-            />
-          </div>
-          <figcaption>
-            <span>FROM THE TABLETOP</span>
-            <strong>Every card has a story.</strong>
-            <p>
-              Doxies big and small. Smooth, wire, and long-haired. Build a
-              dynasty that looks like your favorite pack.
-            </p>
-            <small>Prototype shown. Final packaging may vary.</small>
-          </figcaption>
-        </figure>
-      </section>
-
-      <section className="app-section" id="app-game">
-        <div className="app-leaf app-leaf-one" />
-        <div className="app-leaf app-leaf-two" />
-        <div className="app-intro">
-          <div className="app-copy">
-            <p className="eyebrow">THE APP GAME · COMING SOON</p>
-            <h2>
-              Meet the
-              <br />
-              <em>longest</em> dachshund.
-            </h2>
-            <p className="app-lede">
-              Snack, steer, and bark your way through a sunny backyard
-              adventure. The farther you go, the longer your legend grows.
-            </p>
-            <ul className="app-beats" aria-label="Game actions">
-              <li>
-                <span>01</span> Snack
-              </li>
-              <li>
-                <span>02</span> Steer
-              </li>
-              <li>
-                <span>03</span> Bark
-              </li>
-              <li>
-                <span>∞</span> Stretch
-              </li>
-            </ul>
-            <a className="button button-cream" href="#app-preview">
-              See the game <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-
-          <div className="phone-stage">
-            <div className="sun-orbit orbit-one" />
-            <div className="sun-orbit orbit-two" />
-            <div className="phone">
-              <div className="phone-speaker" />
-              <Image
-                src="/images/app-gameplay.png"
-                alt="The Longest Dachshund mobile game showing a dachshund stretching through a sunny backyard"
-                fill
-                sizes="(max-width: 800px) 72vw, 30vw"
-              />
-            </div>
-            <span className="phone-callout callout-one">
-              <b>+1</b> snack
-            </span>
-            <span className="phone-callout callout-two">
-              <b>12</b> long
-            </span>
-          </div>
-        </div>
-
-        <div className="app-banner">
-          <Image
-            src="/images/app-hero.png"
-            alt="The Longest Dachshund game artwork"
-            fill
-            sizes="100vw"
-          />
-        </div>
-
-        <div className="app-preview" id="app-preview">
-          <div className="preview-heading">
-            <p className="eyebrow">A WORLD THAT&apos;S UNIQUELY YOURS</p>
-            <h3>Play long. Live large.</h3>
-            <p>
-              Create your doxie, build a bond, and collect a closet full of
-              personality along the way.
-            </p>
-          </div>
-
-          <div className="preview-rail">
-            <article className="preview-card preview-warm">
-              <div className="preview-copy">
-                <span>01</span>
-                <h4>Make every dog your own</h4>
-                <p>Choose a look, a name, and plenty of favorite things.</p>
-              </div>
-              <Image
-                src="/images/app-create.png"
-                alt="A preview of the dachshund creator"
-                width={1080}
-                height={1920}
-                sizes="(max-width: 800px) 78vw, 28vw"
-              />
-            </article>
-
-            <article className="preview-card preview-mint">
-              <div className="preview-copy">
-                <span>02</span>
-                <h4>Meet your longest best friend</h4>
-                <p>Care for your doxie, then head out for another long walk.</p>
-              </div>
-              <Image
-                src="/images/app-home.png"
-                alt="A preview of the app home screen with a customized dachshund"
-                width={1080}
-                height={1920}
-                sizes="(max-width: 800px) 78vw, 28vw"
-              />
-            </article>
-
-            <article className="preview-card preview-purple">
-              <div className="preview-copy">
-                <span>03</span>
-                <h4>Collect a little personality</h4>
-                <p>Unlock hats, collars, sweaters, bandanas, and more.</p>
-              </div>
-              <Image
-                src="/images/app-closet.png"
-                alt="A preview of the in-game clothing collection"
-                width={1080}
-                height={1920}
-                sizes="(max-width: 800px) 78vw, 28vw"
-              />
-            </article>
-          </div>
-          <p className="preview-disclaimer">
-            App preview imagery shows the creative direction; final features
-            and screens may vary.
-          </p>
-        </div>
-      </section>
-
-      <section className="world-section" id="about">
-        <div className="world-copy">
-          <p className="eyebrow">WELCOME TO THE DYNASTY</p>
-          <h2>Every doxie deserves a crown.</h2>
           <p>
-            Doxie Dynasty is a playful world made for dachshund people—whether
-            you&apos;re collecting cards around the table or chasing one more
-            snack on your phone.
+            One paw on the path, one eye on the snacks. Grow longer with every
+            bite, dodge backyard chaos, and chase a new personal best.
           </p>
         </div>
-        <div className="world-grid">
+
+        <div className="gameplay-grid">
           <article>
-            <span className="world-number">01</span>
-            <div className="world-icon">♛</div>
-            <h3>Celebrate the breed</h3>
-            <p>Big character, long backs, and a whole lot of charm.</p>
+            <span className="step-number">01</span>
+            <div className="step-icon">●</div>
+            <h3>Drag to steer</h3>
+            <p>Guide your doxie around garden hazards with one easy gesture.</p>
           </article>
           <article>
-            <span className="world-number">02</span>
-            <div className="world-icon">✦</div>
-            <h3>Bring the pack together</h3>
-            <p>Family game nights and mobile moments made to feel joyful.</p>
+            <span className="step-number">02</span>
+            <div className="step-icon">✦</div>
+            <h3>Snack to stretch</h3>
+            <p>Scoop up treats and watch your tiny dog become a very long dog.</p>
           </article>
           <article>
-            <span className="world-number">03</span>
-            <div className="world-icon">●</div>
-            <h3>Build your dynasty</h3>
-            <p>Collect favorites, chase rewards, and make the world your own.</p>
+            <span className="step-number">03</span>
+            <div className="step-icon">◉</div>
+            <h3>Bark at trouble</h3>
+            <p>Get close, tap the hazard, and send it packing for bonus points.</p>
           </article>
-        </div>
-        <div className="closing-cta">
-          <div>
-            <p>READY TO JOIN THE PACK?</p>
-            <h3>Pick your way to play.</h3>
-          </div>
-          <div>
-            <a
-              className="button button-gold"
-              href={amazonSearch}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Card game on Amazon <span aria-hidden="true">↗</span>
-            </a>
-            <a className="button button-light-ghost" href="#app-game">
-              App game coming soon
-            </a>
-          </div>
         </div>
       </section>
 
-      <footer>
-        <a className="brand footer-brand" href="#top">
-          <span className="brand-mark" aria-hidden="true">
-            <span>♛</span>
-          </span>
-          <span className="brand-copy">
-            <strong>DOXIE</strong>
-            <span>DYNASTY</span>
-          </span>
-        </a>
-        <p>Two games. One very long world.</p>
-        <div className="footer-links">
-          <a href="#card-game">Card game</a>
-          <a href="#app-game">App game</a>
-          <a href="#about">About</a>
+      <section className="cinema-banner" aria-label="The Longest Dachshund key artwork">
+        <Image
+          src="/images/app-hero.png"
+          alt="The Longest Dachshund running through a glowing backyard"
+          fill
+          sizes="100vw"
+        />
+      </section>
+
+      <section className="screens" id="screens">
+        <div className="screens-heading">
+          <p className="eyebrow">YOUR DOG. YOUR STORY.</p>
+          <h2>More than a long walk.</h2>
+          <p>
+            Create your best friend, build your bond, and collect a closet full
+            of personality between runs.
+          </p>
         </div>
-        <small>© 2026 Doxie Dynasty. All rights reserved.</small>
-      </footer>
+
+        <div className="screen-rail">
+          <article className="screen-card screen-coral">
+            <div className="screen-copy">
+              <span>01</span>
+              <h3>Make every dog your own</h3>
+              <p>Choose their name, coat, fur, and favorite finishing touches.</p>
+            </div>
+            <Image
+              src="/images/app-create.png"
+              alt="Dachshund creator preview"
+              width={1080}
+              height={1920}
+              sizes="(max-width: 850px) 82vw, 29vw"
+            />
+          </article>
+          <article className="screen-card screen-mint">
+            <div className="screen-copy">
+              <span>02</span>
+              <h3>Meet your longest best friend</h3>
+              <p>Feed, walk, play, and keep the daily dachshund bond growing.</p>
+            </div>
+            <Image
+              src="/images/app-home.png"
+              alt="Dachshund home and daily bond preview"
+              width={1080}
+              height={1920}
+              sizes="(max-width: 850px) 82vw, 29vw"
+            />
+          </article>
+          <article className="screen-card screen-purple">
+            <div className="screen-copy">
+              <span>03</span>
+              <h3>Collect a little personality</h3>
+              <p>Unlock hats, collars, sweaters, bandanas, and plenty more.</p>
+            </div>
+            <Image
+              src="/images/app-closet.png"
+              alt="The Long Closet collection preview"
+              width={1080}
+              height={1920}
+              sizes="(max-width: 850px) 82vw, 29vw"
+            />
+          </article>
+        </div>
+        <p className="preview-note">
+          Development preview. Final features and screens may vary.
+        </p>
+      </section>
+
+      <section className="feature-section" id="features">
+        <div className="feature-copy">
+          <p className="eyebrow">A LITTLE DOG WITH A BIG LIFE</p>
+          <h2>Every day deserves more zoomies.</h2>
+        </div>
+        <div className="feature-list">
+          <article>
+            <span>01</span>
+            <div><h3>Daily adventures</h3><p>Fresh runs, challenges, rewards, and reasons to come back.</p></div>
+          </article>
+          <article>
+            <span>02</span>
+            <div><h3>A growing bond</h3><p>Care for your doxie and make every day together count.</p></div>
+          </article>
+          <article>
+            <span>03</span>
+            <div><h3>A closet full of character</h3><p>Turn every unlock into a new way to show off your dog.</p></div>
+          </article>
+          <article>
+            <span>04</span>
+            <div><h3>Parades worth barking about</h3><p>Celebrate big wins, new parks, and every longer legend.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section className="privacy-feature" id="privacy">
+        <div className="privacy-copy">
+          <p className="eyebrow">YOUR DATA. YOUR CHOICE.</p>
+          <h2>Privacy controls within reach.</h2>
+          <p>
+            The app’s Settings area is designed to keep privacy information and
+            account deletion easy to find. The same controls are always
+            available here on the web.
+          </p>
+          <div className="privacy-actions">
+            <a className="button button-gold" href="/privacy-policy">Read privacy policy</a>
+            <a className="button button-light" href="/delete-account">Delete account</a>
+          </div>
+        </div>
+
+        <div className="settings-mock" aria-label="Privacy and account controls preview">
+          <div className="settings-top">
+            <span className="settings-back">←</span>
+            <div><small>SETTINGS</small><strong>Privacy &amp; account</strong></div>
+            <span className="settings-dog">●</span>
+          </div>
+          <div className="settings-group">
+            <a href="/privacy-policy">
+              <span className="settings-icon">◎</span>
+              <span><strong>Privacy Policy</strong><small>How your data is handled</small></span>
+              <b>›</b>
+            </a>
+            <a href="/delete-account" className="danger-row">
+              <span className="settings-icon">×</span>
+              <span><strong>Delete Account</strong><small>Request permanent deletion</small></span>
+              <b>›</b>
+            </a>
+          </div>
+          <p>These links open the public web pages from inside the app.</p>
+        </div>
+      </section>
+
+      <section className="launch-section" id="download">
+        <Paw className="launch-paw" />
+        <p className="eyebrow">COMING SOON</p>
+        <h2>How long can you go?</h2>
+        <p>Follow the trail. The Longest Dachshund is heading to iOS and Android.</p>
+        <div className="store-row">
+          <span className="store-badge"><b>●</b><small>Coming soon to</small><strong>App Store</strong></span>
+          <span className="store-badge"><b>▶</b><small>Coming soon to</small><strong>Google Play</strong></span>
+        </div>
+      </section>
+
+      <SiteFooter />
     </main>
   );
 }
