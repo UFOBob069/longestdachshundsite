@@ -92,63 +92,95 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="screens" id="screens">
-        <div className="screens-heading">
-          <p className="eyebrow">YOUR DOG. YOUR STORY.</p>
-          <h2>More than a walk.</h2>
-          <p>
-            Create your best friend, build your bond, and collect a closet full
-            of personality between runs.
-          </p>
+      <section className="story-section story-create" id="screens">
+        <div className="story-inner">
+          <div className="story-copy">
+            <p className="eyebrow">MORE THAN A WALK · 01</p>
+            <h2>Make every dog your own.</h2>
+            <p className="story-lede">
+              Choose their name, coat, fur, and favorite finishing touches.
+              Every detail makes your longest friend feel like yours.
+            </p>
+            <div className="story-details" aria-label="Dachshund customization features">
+              <span>Name &amp; bond</span>
+              <span>Coats &amp; fur</span>
+              <span>Favorite things</span>
+            </div>
+          </div>
+          <div className="story-visual">
+            <span className="story-number" aria-hidden="true">01</span>
+            <div className="story-device-crop">
+              <Image
+                src="/images/app-create.png"
+                alt="Create and customize your dachshund"
+                width={1080}
+                height={1920}
+                sizes="(max-width: 850px) 88vw, 38vw"
+              />
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="screen-rail">
-          <article className="screen-card screen-coral">
-            <div className="screen-copy">
-              <span>01</span>
-              <h3>Make every dog your own</h3>
-              <p>Choose their name, coat, fur, and favorite finishing touches.</p>
+      <section className="story-section story-bond story-reverse">
+        <div className="story-inner">
+          <div className="story-copy">
+            <p className="eyebrow">YOUR LONGEST BEST FRIEND · 02</p>
+            <h2>Meet your longest best friend.</h2>
+            <p className="story-lede">
+              Feed, walk, play, and keep the daily dachshund bond growing.
+              The more you care, the more personality shines through.
+            </p>
+            <div className="story-details" aria-label="Daily dachshund activities">
+              <span>Feed</span>
+              <span>Walk</span>
+              <span>Play</span>
             </div>
-            <Image
-              src="/images/app-create.png"
-              alt="Dachshund creator preview"
-              width={1080}
-              height={1920}
-              sizes="(max-width: 850px) 82vw, 29vw"
-            />
-          </article>
-          <article className="screen-card screen-mint">
-            <div className="screen-copy">
-              <span>02</span>
-              <h3>Meet your longest best friend</h3>
-              <p>Feed, walk, play, and keep the daily dachshund bond growing.</p>
+          </div>
+          <div className="story-visual">
+            <span className="story-number" aria-hidden="true">02</span>
+            <div className="story-device-crop">
+              <Image
+                src="/images/app-home.png"
+                alt="Care for your dachshund and grow your daily bond"
+                width={1080}
+                height={1920}
+                sizes="(max-width: 850px) 88vw, 38vw"
+              />
             </div>
-            <Image
-              src="/images/app-home.png"
-              alt="Dachshund home and daily bond preview"
-              width={1080}
-              height={1920}
-              sizes="(max-width: 850px) 82vw, 29vw"
-            />
-          </article>
-          <article className="screen-card screen-purple">
-            <div className="screen-copy">
-              <span>03</span>
-              <h3>Collect a little personality</h3>
-              <p>Unlock hats, collars, sweaters, bandanas, and plenty more.</p>
-            </div>
-            <Image
-              src="/images/app-closet.png"
-              alt="The Long Closet collection preview"
-              width={1080}
-              height={1920}
-              sizes="(max-width: 850px) 82vw, 29vw"
-            />
-          </article>
+          </div>
         </div>
-        <p className="preview-note">
-          Development preview. Final features and screens may vary.
-        </p>
+      </section>
+
+      <section className="story-section story-closet">
+        <div className="story-inner">
+          <div className="story-copy">
+            <p className="eyebrow">A CLOSET FULL OF CHARACTER · 03</p>
+            <h2>Collect a little personality.</h2>
+            <p className="story-lede">
+              Unlock hats, collars, sweaters, bandanas, and plenty more.
+              Build a look for every walk, mood, and tiny-dog adventure.
+            </p>
+            <div className="story-details" aria-label="Dachshund closet items">
+              <span>Hats</span>
+              <span>Collars</span>
+              <span>Sweaters</span>
+            </div>
+            <p className="story-note">Development preview. Final features and screens may vary.</p>
+          </div>
+          <div className="story-visual">
+            <span className="story-number" aria-hidden="true">03</span>
+            <div className="story-device-crop">
+              <Image
+                src="/images/app-closet.png"
+                alt="Collect outfits in The Long Closet"
+                width={1080}
+                height={1920}
+                sizes="(max-width: 850px) 88vw, 38vw"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="feature-section" id="features">
