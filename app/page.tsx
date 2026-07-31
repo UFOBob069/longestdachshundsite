@@ -12,72 +12,62 @@ export default function Home() {
     <main>
       <SiteHeader />
 
-      <section className="hero" id="top">
-        <div className="hero-grain" />
-        <Paw className="paw-one" />
-        <Paw className="paw-two" />
-        <div className="hero-copy">
-          <p className="eyebrow">A DELIGHTFULLY LONG MOBILE ADVENTURE</p>
-          <h1>
-            Stretch your
-            <br />
-            <em>legend.</em>
-          </h1>
-          <p className="hero-lede">
-            Snack, steer, and bark your way through a sunny backyard. The
-            farther you go, the longer your dachshund grows.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-gold" href="#gameplay">
-              See how it plays <span aria-hidden="true">↓</span>
-            </a>
-            <a className="button button-ghost" href="#screens">
-              Meet your doxie
-            </a>
-          </div>
-          <div className="coming-note">
-            <span />
-            Coming soon to iOS and Android
-          </div>
-        </div>
-
-        <div className="hero-phone-stage" aria-label="The Longest Dachshund gameplay preview">
-          <div className="hero-orbit orbit-a" />
-          <div className="hero-orbit orbit-b" />
-          <div className="hero-phone">
-            <div className="phone-speaker" />
-            <Image
-              src="/images/app-gameplay.png"
-              alt="A long dachshund running through a sunny backyard in The Longest Dachshund"
-              fill
-              priority
-              sizes="(max-width: 850px) 78vw, 31vw"
-            />
-          </div>
-          <span className="float-stat stat-snack"><b>+1</b> snack</span>
-          <span className="float-stat stat-long"><b>12</b> long</span>
-          <div className="sun-token">☀</div>
-        </div>
+      <section className="image-hero" id="top" aria-label="The Longest Dachshund">
+        <Image
+          src="/images/app-hero.png"
+          alt="The Longest Dachshund running through a glowing backyard"
+          fill
+          priority
+          sizes="100vw"
+        />
       </section>
 
-      <div className="ticker" aria-hidden="true">
-        <div>
-          <span>SNACK</span><Paw /><span>STEER</span><Paw /><span>BARK</span><Paw />
-          <span>STRETCH</span><Paw /><span>SNACK</span><Paw /><span>STEER</span><Paw />
-          <span>BARK</span><Paw /><span>STRETCH</span><Paw />
-        </div>
-      </div>
-
-      <section className="gameplay" id="gameplay">
-        <div className="section-intro">
-          <div>
-            <p className="eyebrow">THE LONGEST RUN WINS</p>
-            <h2>Go long.<br /><em>Live legendary.</em></h2>
+      <section className="stretch-section" id="gameplay">
+        <div className="stretch-grain" />
+        <Paw className="paw-one" />
+        <Paw className="paw-two" />
+        <div className="stretch-main">
+          <div className="stretch-copy">
+            <p className="eyebrow">A DELIGHTFULLY LONG MOBILE ADVENTURE</p>
+            <h2>
+              Stretch your
+              <br />
+              <em>legend.</em>
+            </h2>
+            <p className="stretch-lede">
+              Snack, steer, and bark your way through a sunny backyard. The
+              farther you go, the longer your dachshund grows.
+            </p>
+            <div className="stretch-actions">
+              <a className="button button-gold" href="#screens">
+                Meet your doxie <span aria-hidden="true">↓</span>
+              </a>
+              <a className="button button-ghost" href="#features">
+                Explore features
+              </a>
+            </div>
+            <div className="coming-note">
+              <span />
+              Coming soon to iOS and Android
+            </div>
           </div>
-          <p>
-            One paw on the path, one eye on the snacks. Grow longer with every
-            bite, dodge backyard chaos, and chase a new personal best.
-          </p>
+
+          <div className="hero-phone-stage" aria-label="The Longest Dachshund gameplay preview">
+            <div className="hero-orbit orbit-a" />
+            <div className="hero-orbit orbit-b" />
+            <div className="hero-phone">
+              <div className="phone-speaker" />
+              <Image
+                src="/images/app-gameplay.png"
+                alt="A long dachshund running through a sunny backyard in The Longest Dachshund"
+                fill
+                sizes="(max-width: 850px) 78vw, 31vw"
+              />
+            </div>
+            <span className="float-stat stat-snack"><b>+1</b> snack</span>
+            <span className="float-stat stat-long"><b>12</b> long</span>
+            <div className="sun-token">☀</div>
+          </div>
         </div>
 
         <div className="gameplay-grid">
@@ -102,19 +92,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cinema-banner" aria-label="The Longest Dachshund key artwork">
-        <Image
-          src="/images/app-hero.png"
-          alt="The Longest Dachshund running through a glowing backyard"
-          fill
-          sizes="100vw"
-        />
-      </section>
-
       <section className="screens" id="screens">
         <div className="screens-heading">
           <p className="eyebrow">YOUR DOG. YOUR STORY.</p>
-          <h2>More than a long walk.</h2>
+          <h2>More than a walk.</h2>
           <p>
             Create your best friend, build your bond, and collect a closet full
             of personality between runs.

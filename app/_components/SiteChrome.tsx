@@ -1,8 +1,12 @@
+import Image from "next/image";
+
 export function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand" href="/" aria-label="The Longest Dachshund home">
-        <span className="brand-mark" aria-hidden="true">●</span>
+        <span className="brand-mark" aria-hidden="true">
+          <Image src="/images/royal-doxie.png" alt="" fill sizes="44px" />
+        </span>
         <span className="brand-copy"><small>THE</small><strong>LONGEST</strong><span>DACHSHUND</span></span>
       </a>
       <nav className="desktop-nav" aria-label="Main navigation">
@@ -30,7 +34,9 @@ export function SiteFooter() {
   return (
     <footer>
       <a className="brand footer-brand" href="/">
-        <span className="brand-mark" aria-hidden="true">●</span>
+        <span className="brand-mark" aria-hidden="true">
+          <Image src="/images/royal-doxie.png" alt="" fill sizes="38px" />
+        </span>
         <span className="brand-copy"><small>THE</small><strong>LONGEST</strong><span>DACHSHUND</span></span>
       </a>
       <p>Stretch. Snack. Become a legend.</p>
