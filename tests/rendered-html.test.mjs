@@ -40,6 +40,12 @@ test("game structured data matches the actual app without invented ratings", () 
   assert.equal(data.aggregateRating, undefined);
 });
 
+test("Google ownership verification is present in the document head", () => {
+  const head = html.match(/<head>([\s\S]*?)<\/head>/)?.[1];
+  assert.ok(head);
+  assert.match(head, /<meta name="google-site-verification" content="33z4FDDKhlJZlcEkUrnajwwu1o5fYSB-oUARPil7d8c"/);
+});
+
 test("legal pages remain available with their own canonicals", async () => {
   for (const path of ["privacy-policy", "delete-account"]) {
     const page = await readFile(new URL(`${path}.html`, output), "utf8");

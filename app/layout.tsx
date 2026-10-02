@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
     title: { default: "The Longest Dachshund", template: "%s | The Longest Dachshund" },
     description: GAME_DESCRIPTION,
+    verification: { google: "33z4FDDKhlJZlcEkUrnajwwu1o5fYSB-oUARPil7d8c" },
     icons: { icon: "/images/royal-doxie.png", shortcut: "/images/royal-doxie.png" },
     openGraph: {
       title: "The Longest Dachshund",
