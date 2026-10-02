@@ -3,6 +3,7 @@ import { SiteFooter, SiteHeader } from "../_components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Delete Account",
+  alternates: { canonical: "/delete-account" },
   description: "Request deletion of your The Longest Dachshund account and associated data.",
 };
 

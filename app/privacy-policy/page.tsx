@@ -3,6 +3,7 @@ import { SiteFooter, SiteHeader } from "../_components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
+  alternates: { canonical: "/privacy-policy" },
   description: "Privacy Policy for The Longest Dachshund mobile game.",
 };
 

@@ -1,5 +1,13 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { SiteFooter, SiteHeader } from "./_components/SiteChrome";
+import { GAME_DESCRIPTION, GOOGLE_PLAY_URL, gameFaqs, gameSchema } from "./site";
+
+export const metadata: Metadata = {
+  title: { absolute: "The Longest Dachshund | Fun Dachshund Game for Android" },
+  description: GAME_DESCRIPTION,
+  alternates: { canonical: "/" },
+};
 
 const Paw = ({ className = "" }: { className?: string }) => (
   <span className={`paw ${className}`} aria-hidden="true">
@@ -11,6 +19,7 @@ export default function Home() {
   return (
     <main>
       <SiteHeader />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(gameSchema).replace(/</g, "\\u003c") }} />
 
       <section className="image-hero" id="top" aria-label="The Longest Dachshund">
         <Image
@@ -28,19 +37,20 @@ export default function Home() {
         <Paw className="paw-two" />
         <div className="stretch-main">
           <div className="stretch-copy">
-            <p className="eyebrow">A DELIGHTFULLY LONG MOBILE ADVENTURE</p>
-            <h2>
+            <p className="eyebrow">THE LONGEST DACHSHUND · NOW ON ANDROID</p>
+            <h1>
               Stretch your
               <br />
               <em>legend.</em>
-            </h2>
+            </h1>
             <p className="stretch-lede">
-              Snack, steer, and bark your way through a sunny backyard. The
-              farther you go, the longer your dachshund grows.
+              A fun mobile game for dachshund lovers. Snack, steer, and bark
+              your way through a sunny backyard. The farther you go, the
+              longer your dachshund grows.
             </p>
             <div className="stretch-actions">
-              <a className="button button-gold" href="#screens">
-                Meet your doxie <span aria-hidden="true">↓</span>
+              <a className="button button-gold" href={GOOGLE_PLAY_URL}>
+                Get it on Google Play <span aria-hidden="true">↗</span>
               </a>
               <a className="button button-ghost" href="#features">
                 Explore features
@@ -48,7 +58,7 @@ export default function Home() {
             </div>
             <div className="coming-note">
               <span />
-              Coming soon to iOS and Android
+              Available now for Android · In-app purchases
             </div>
           </div>
 
@@ -166,7 +176,7 @@ export default function Home() {
               <span>Collars</span>
               <span>Sweaters</span>
             </div>
-            <p className="story-note">Development preview. Final features and screens may vary.</p>
+            <p className="story-note">Find your next look in the closet. Optional boutique items are available through in-app purchases.</p>
           </div>
           <div className="story-visual">
             <span className="story-number" aria-hidden="true">03</span>
@@ -205,6 +215,76 @@ export default function Home() {
             <span>04</span>
             <div><h3>Parades worth barking about</h3><p>Celebrate big wins, new parks, and every longer legend.</p></div>
           </article>
+        </div>
+      </section>
+
+      <section className="doxie-section" id="dachshund-lovers" aria-labelledby="doxie-heading">
+        <div className="doxie-intro">
+          <p className="eyebrow">TINY LEGS. BIG MAIN-CHARACTER ENERGY.</p>
+          <h2 id="doxie-heading">A dog game for people who get dachshunds.</h2>
+          <p>
+            Looking for fun mobile games for dachshund lovers? Start with a dog
+            who takes snacks very seriously. The Longest Dachshund turns the
+            little things doxie people recognize—big barks, blanket burrows,
+            and a wardrobe made for a very long body—into a playful Android adventure.
+          </p>
+          <p>
+            Whether you call them dachshunds, doxies, sausage dogs, or wiener dogs,
+            you can build a tiny companion with an outsized personality. You don’t
+            need to own a dog to enjoy this one. Just bring a soft spot for short
+            legs and the urge to collect one more snack.
+          </p>
+        </div>
+        <div className="doxie-grid">
+          <article>
+            <span className="eyebrow">THE ARCADE SIDE</span>
+            <h3>One more snack. One longer run.</h3>
+            <p>
+              Guide your dachshund through the yard, scoop up food, and steer
+              around trouble as your dog gets longer. Get close to a hazard and
+              tap to bark it away. Chasing your own best length gives each walk
+              a clear goal, while new locations and victory parades make progress
+              feel like a celebration.
+            </p>
+          </article>
+          <article>
+            <span className="eyebrow">THE COZY SIDE</span>
+            <h3>A virtual doxie to come home to.</h3>
+            <p>
+              Between arcade runs, slow down with the virtual pet side of the
+              game. Feed, walk, and play with your pup to grow your daily bond.
+              Pick out a sweater, change a collar, or spend time in the Long Back
+              Clubhouse with toys, treats, ramps, and cozy burrows. There’s more
+              to your dog’s day than a high score.
+            </p>
+          </article>
+          <article>
+            <span className="eyebrow">YOUR FIRST WALK</span>
+            <h3>Make a dog. Find your rhythm.</h3>
+            <p>
+              Start by naming your dachshund and choosing a coat and hair type.
+              On your first walks, leave yourself room to turn rather than chasing
+              every snack at the edge of the yard. Try the on-screen paw control
+              if you prefer directional steering, and use Pause whenever you need
+              a break. Your next personal best can wait.
+            </p>
+          </article>
+        </div>
+        <a className="button button-gold" href={GOOGLE_PLAY_URL}>Meet your dachshund on Android <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section className="faq-section" id="faq" aria-labelledby="faq-heading">
+        <div className="faq-heading">
+          <p className="eyebrow">BEFORE THE FIRST ZOOMIE</p>
+          <h2 id="faq-heading">A few good questions.</h2>
+        </div>
+        <div className="faq-list">
+          {gameFaqs.map(({ question, answer }) => (
+            <details key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
         </div>
       </section>
 
@@ -247,13 +327,13 @@ export default function Home() {
 
       <section className="launch-section" id="download">
         <Paw className="launch-paw" />
-        <p className="eyebrow">COMING SOON</p>
+        <p className="eyebrow">READY FOR YOUR FIRST WALK?</p>
         <h2>How long can you go?</h2>
-        <p>Follow the trail. The Longest Dachshund is heading to iOS and Android.</p>
+        <p>Download The Longest Dachshund on Google Play and give your next break a little more bark. Available now for Android, with optional in-app purchases.</p>
         <div className="store-row">
-          <span className="store-badge"><b>●</b><small>Coming soon to</small><strong>App Store</strong></span>
-          <span className="store-badge"><b>▶</b><small>Coming soon to</small><strong>Google Play</strong></span>
+          <a className="store-badge" href={GOOGLE_PLAY_URL} aria-label="Download The Longest Dachshund on Google Play"><b aria-hidden="true">▶</b><small>Get it on</small><strong>Google Play</strong></a>
         </div>
+        <p className="platform-note">Playing on iPhone? An iOS version is not available yet.</p>
       </section>
 
       <SiteFooter />

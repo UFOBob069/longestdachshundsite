@@ -89,6 +89,7 @@ img { max-width: 100%; }
 .button-wide { width: 100%; }
 
 .image-hero {
+  width: 100%;
   aspect-ratio: 2.048;
   background: #45100f;
   border-bottom: 1px solid var(--gold);
@@ -119,15 +120,15 @@ img { max-width: 100%; }
 .stretch-copy { max-width: 750px; }
 .eyebrow { color: #aa6d10; font-size: .7rem; font-weight: 900; letter-spacing: .23em; margin: 0 0 1.4rem; text-transform: uppercase; }
 .stretch-section .eyebrow, .feature-section .eyebrow, .launch-section .eyebrow { color: var(--gold-light); }
-.stretch-copy h2, .story-copy h2, .feature-copy h2, .privacy-copy h2, .launch-section h2, .legal-hero h1, .delete-hero h1, .details-heading h2, .delete-help h2 {
+.stretch-copy h1, .story-copy h2, .feature-copy h2, .privacy-copy h2, .launch-section h2, .legal-hero h1, .delete-hero h1, .details-heading h2, .delete-help h2 {
   font-family: var(--font-display), Georgia, serif;
   font-weight: 850;
   letter-spacing: -.05em;
   line-height: .92;
   margin: 0;
 }
-.stretch-copy h2 { font-size: clamp(4.2rem, 7.4vw, 8rem); }
-.stretch-copy h2 em { color: var(--gold); font-weight: 550; }
+.stretch-copy h1 { font-size: clamp(4.2rem, 7.4vw, 8rem); }
+.stretch-copy h1 em { color: var(--gold); font-weight: 550; }
 .stretch-lede { color: rgba(255,254,249,.72); font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.7; margin: 2rem 0 2.3rem; max-width: 600px; }
 .stretch-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
 .coming-note { align-items: center; color: rgba(255,254,249,.65); display: flex; font-size: .67rem; font-weight: 800; gap: .65rem; letter-spacing: .1em; margin-top: 2rem; text-transform: uppercase; }
@@ -236,6 +237,29 @@ footer > p { color: rgba(255,255,255,.46); font-family: var(--font-display), Geo
 .footer-links { display: flex; gap: 1.5rem; }
 .footer-links a { color: rgba(255,255,255,.62); }
 footer > small { color: rgba(255,255,255,.32); font-size: .58rem; grid-column: 1 / -1; justify-self: center; }
+
+/* Readable game guide and frequently asked questions. */
+section[id] { scroll-margin-top: 105px; }
+.doxie-section, .faq-section { background: var(--cream); padding: clamp(4rem, 7vw, 7rem) clamp(1.2rem, 7vw, 7.5rem); }
+.doxie-intro { max-width: 850px; }
+.doxie-intro h2, .faq-heading h2 { color: var(--forest-deep); font-family: var(--font-display), Georgia, serif; font-size: clamp(2.5rem, 4.6vw, 4.6rem); letter-spacing: -.04em; line-height: 1.08; margin: 0 0 1.5rem; text-wrap: balance; }
+.doxie-intro > p:not(.eyebrow), .doxie-grid p, .faq-list p { color: #46574e; font-size: 1rem; line-height: 1.8; }
+.doxie-grid { display: grid; gap: clamp(1.5rem, 3vw, 3rem); grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 3rem 0 2rem; }
+.doxie-grid article { border-top: 2px solid #c8aa69; padding-top: 1.5rem; }
+.doxie-grid h3 { font-family: var(--font-display), Georgia, serif; font-size: 1.65rem; line-height: 1.2; margin: 1rem 0; }
+.doxie-grid .eyebrow { font-size: .65rem; }
+.faq-section { background: #e7eddf; display: grid; gap: 3rem; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+.faq-list details { border-bottom: 1px solid #b7c8b6; }
+.faq-list summary { color: var(--forest-deep); cursor: pointer; font-size: 1.05rem; font-weight: 800; line-height: 1.5; padding: 1.2rem .3rem; }
+.faq-list summary:focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; }
+.faq-list p { margin: 0; padding: 0 .3rem 1.4rem; }
+.store-badge:hover { border-color: var(--gold); background: var(--forest-deep); }
+.launch-section > .platform-note { font-size: .8rem; margin-bottom: 0; }
+.footer-links { flex-wrap: wrap; }
+@media (max-width: 850px) {
+  .doxie-grid, .faq-section { grid-template-columns: 1fr; }
+  .faq-section { gap: 1rem; }
+}
 
 /* Legal pages */
 .legal-page, .delete-page { background: var(--cream); min-height: 100vh; }
@@ -351,9 +375,9 @@ footer > small { color: rgba(255,255,255,.32); font-size: .58rem; grid-column: 1
   .site-header { padding: 0 1rem; }
   .brand-copy strong { font-size: 1.05rem; }
   .brand-mark { height: 39px; width: 39px; }
-  .image-hero { min-height: 260px; }
+  .image-hero { min-height: 0; }
   .stretch-section { padding-left: 1rem; padding-right: 1rem; }
-  .stretch-copy h2 { font-size: clamp(3.8rem,17vw,5.5rem); }
+  .stretch-copy h1 { font-size: clamp(3.8rem,17vw,5.5rem); }
   .stretch-actions { align-items: stretch; flex-direction: column; }
   .stretch-actions .button { width: 100%; }
   .hero-phone-stage { max-width: 350px; }
